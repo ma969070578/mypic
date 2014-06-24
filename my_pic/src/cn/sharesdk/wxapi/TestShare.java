@@ -62,7 +62,7 @@ public class TestShare extends  BaseActivity  implements OnClickListener{
 		this.setContentView(R.layout.test_share);
 
 		/**
-		 * 手册内容 分享11111111111
+		 * 手册内容 分享111111111112222223333
 		 */
 		Intent intent = getIntent();
 		if (intent != null) {
