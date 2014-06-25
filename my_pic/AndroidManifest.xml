@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
-
+    <!-- android:name="com.my.activity.SkipActivity" -->
     <application
         android:name="com.my.app.MyApp"
         android:allowBackup="true"
@@ -224,12 +224,12 @@
 
         <!-- sharesdk -->
 
-        <activity
+       <activity
             android:name="cn.sharesdk.wxapi.TestShare"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
+        </activity>  
         <activity
             android:name="cn.sharesdk.wxapi.WeiBoShareActivity"
             android:launchMode="singleTask"

@@ -75,9 +75,10 @@
     <string name="setting_su">设置成功</string>
     
     <!-- sharesdk -->
-    	<string name="share_to_wechat">微信好友</string>
+    <string name="share_to_wechat">微信好友</string>
 	<string name="share_to_moment">微信朋友圈</string>
-	    <string name="share_sms">短信分享</string>
+	<string name="share_sms">短信分享</string>
+	<string name="other_share">其它分享</string>
     <string name="share_chat">微信分享</string>
     <string name="share_sina">新浪微博分享</string>
     <string name="share_qq">腾讯微博分享</string>

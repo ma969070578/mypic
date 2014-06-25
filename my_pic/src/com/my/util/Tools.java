@@ -56,6 +56,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.amima.pic.R;
+import com.my.activity.sq.bean.Pic_ServiceItemBean;
 import com.my.app.MyApp;
 
 public class Tools {
@@ -748,6 +749,29 @@ public class Tools {
 		Date a = new Date(d.getYear(), d.getMonth(), d.getDate());
 		Date b = new Date(d1.getYear(), d1.getMonth(), d1.getDate());
 		return (int) ((a.getTime() - b.getTime()) / 1000 / 3600 / 24);
+	}
+	
+	
+	/**
+	 * 获取图片分类
+	 * @return
+	 */
+	public List<Pic_ServiceItemBean> getServiceItem(){
+		
+		List<Pic_ServiceItemBean> mlist=new ArrayList<Pic_ServiceItemBean>();
+		Pic_ServiceItemBean  mbean1=new Pic_ServiceItemBean();
+		mbean1.setId("1");
+		mbean1.setClassName("美女");
+		mlist.add(mbean1);
+		
+		
+		Pic_ServiceItemBean  mbean2=new Pic_ServiceItemBean();
+		mbean2.setId("2");
+		mbean2.setClassName("风景");
+		mlist.add(mbean2);
+		
+		return mlist;
+		
 	}
 	
 }
