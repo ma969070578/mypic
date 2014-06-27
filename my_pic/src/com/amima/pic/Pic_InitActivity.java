@@ -1,5 +1,7 @@
 package com.amima.pic;
 
+import java.io.File;
+
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -17,6 +19,7 @@ import com.baidu.location.LocationClientOption.LocationMode;
 import com.my.activity.BaseActivity;
 import com.my.app.MyApp;
 import com.my.util.Constants;
+import com.my.util.Files;
 import com.my.util.PhoneUtils;
 import com.my.util.SharedPreTools;
 import com.my.util.SystemOut;
@@ -81,9 +84,17 @@ public class Pic_InitActivity extends BaseActivity {
 			mLocClient.requestLocation();
 		}
 
-//		redirectTo();
-//		if (true)
-//			return;
+		final String FILE_NAME1 = "1.gif";
+		final String FILE_NAME2 = "2.gif";
+		final String FILE_NAME3 = "3.gif";
+
+		Files.copyTestImageToSdCard(Pic_InitActivity.this, FILE_NAME1);
+		Files.copyTestImageToSdCard(Pic_InitActivity.this, FILE_NAME2);
+		Files.copyTestImageToSdCard(Pic_InitActivity.this, FILE_NAME3);
+
+		// redirectTo();
+		// if (true)
+		// return;
 		// 渐变展示启动屏
 		AlphaAnimation aa = new AlphaAnimation(0.3f, 1.0f);
 		aa.setDuration(2000);
@@ -123,7 +134,7 @@ public class Pic_InitActivity extends BaseActivity {
 		MyApp.user.setType(type);
 		SystemOut.out("type : " + userType);
 
-		Intent intent = new Intent(this, Pic_ListGroupActivity.class);
+		Intent intent = new Intent(this, Pic_MainActivity.class);
 		startActivity(intent);
 		finish();
 

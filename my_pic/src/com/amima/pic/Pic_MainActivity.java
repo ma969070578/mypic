@@ -47,7 +47,7 @@ import com.my.widget.CustomButton;
 import com.slidingmenu.lib.SlidingMenu;
 import com.umeng.fb.FeedbackAgent;
 
-public class Pic_ListGroupActivity extends BaseActivity implements
+public class Pic_MainActivity extends BaseActivity implements
 		OnClickListener {
 	private View footerView;
 	View Progress_view;
@@ -281,11 +281,11 @@ public class Pic_ListGroupActivity extends BaseActivity implements
 				m.what = GET_SUCCESS;
 				m.obj = tempAskHistoryBeanlist;
 
-				Pic_ListGroupActivity.this.mHandler.sendMessage(m);
+				Pic_MainActivity.this.mHandler.sendMessage(m);
 			} else {
 				Message m = mHandler.obtainMessage();
 				m.what = GET_FAIL;
-				Pic_ListGroupActivity.this.mHandler.sendMessage(m);
+				Pic_MainActivity.this.mHandler.sendMessage(m);
 			}
 
 			SystemOut.out("成功：" + content);
@@ -315,7 +315,7 @@ public class Pic_ListGroupActivity extends BaseActivity implements
 
 					AskHistoryBeanlist.addAll(all_list);
 				} else {
-					Tools.showShortToast("暂无最新数据", Pic_ListGroupActivity.this);
+					Tools.showShortToast("暂无最新数据", Pic_MainActivity.this);
 				}
 
 				footerView.setVisibility(View.GONE);
@@ -397,7 +397,7 @@ public class Pic_ListGroupActivity extends BaseActivity implements
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		// TODO Auto-generated method stub
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			Pic_ListGroupActivity.this.finish();
+			Pic_MainActivity.this.finish();
 
 			return true;
 		}

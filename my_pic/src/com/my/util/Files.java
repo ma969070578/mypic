@@ -247,4 +247,42 @@ public class Files {
 	}
 	
 	
+	/**
+	 *  复制assets文件到sd卡
+	 * @param context
+	 * @param filename
+	 * @param testImageOnSdCard
+	 */
+	public static void copyTestImageToSdCard(final Context context,final String filename) {
+		
+		final File testImageOnSdCard = new File("/mnt/sdcard", filename);
+		if (testImageOnSdCard.exists()) {
+			return ;
+		}
+		
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					InputStream is = context.getAssets().open(filename);
+					FileOutputStream fos = new FileOutputStream(testImageOnSdCard);
+					byte[] buffer = new byte[8192];
+					int read;
+					try {
+						while ((read = is.read(buffer)) != -1) {
+							fos.write(buffer, 0, read);
+						}
+					} finally {
+						fos.flush();
+						fos.close();
+						is.close();
+					}
+				} catch (IOException e) {
+					L.w("Can't copy test image onto SD card");
+				}
+			}
+		}).start();
+	}
+	
+	
 }
