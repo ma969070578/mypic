@@ -23,7 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amima.pic.R;
-import com.my.activity.BaseActivity;
+import com.amima.ui.base.BaseActivity;
 import com.my.activity.sq.adapter.AskHistoryAdapter;
 import com.my.activity.sq.bean.AskHistoryBean;
 import com.my.android.http.AsyncHttpResponseHandler;

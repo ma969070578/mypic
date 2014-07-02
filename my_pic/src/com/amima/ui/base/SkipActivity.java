@@ -1,9 +1,9 @@
-package com.my.activity;
+package com.amima.ui.base;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.amima.pic.Pic_InitActivity;
+import com.amima.pic.ui.Pic_InitActivity;
 
 /**
  * @author Administrator

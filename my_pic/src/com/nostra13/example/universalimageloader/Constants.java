@@ -24,6 +24,7 @@ public final class Constants {
 
 	public static final String[] IMAGES = new String[] {
 			// Heavy images
+	     	"http://dj.95081.com/4.gif",
 			"file:///sdcard/1.gif",
 			"file:///sdcard/2.gif",
 			"file:///sdcard/3.gif",// Image from SD card with encoded symbols

@@ -60,7 +60,7 @@ import android.provider.Settings.Secure;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
-import com.my.app.MyApp;
+import com.amima.app.MyApp;
 
 public class PhoneUtils {
 	private static final String TAG = PhoneUtils.class.getSimpleName();

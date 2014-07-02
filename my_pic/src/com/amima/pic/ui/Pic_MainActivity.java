@@ -1,4 +1,4 @@
-package com.amima.pic;
+package com.amima.pic.ui;
 
 /**
  * 列表
@@ -32,8 +32,9 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.my.activity.BaseActivity;
-import com.my.activity.sq.adapter.Pic_ServiceListAdapter;
+import com.amima.pic.R;
+import com.amima.pic.ui.adapter.Pic_ServiceListAdapter;
+import com.amima.ui.base.BaseActivity;
 import com.my.activity.sq.bean.AskHistoryBean;
 import com.my.activity.sq.bean.Pic_ServiceBean;
 import com.my.android.http.AsyncHttpResponseHandler;

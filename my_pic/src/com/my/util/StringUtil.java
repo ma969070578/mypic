@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringUtil {
@@ -69,6 +70,30 @@ public class StringUtil {
 			fos.write(s.getBytes());
 			fos.close();
 		}
+	}
+	
+	
+	
+	final static Pattern pattern = Pattern.compile("\\S*[?]\\S*");
+
+	/**
+	 * 获取链接的后缀名
+	 * 
+	 * @return
+	 */
+	public static String parseSuffix(String url) {
+
+		Matcher matcher = pattern.matcher(url);
+
+		String[] spUrl = url.toString().split("/");
+		int len = spUrl.length;
+		String endUrl = spUrl[len - 1];
+
+		if (matcher.find()) {
+			String[] spEndUrl = endUrl.split("\\?");
+			return spEndUrl[0].split("\\.")[1];
+		}
+		return endUrl.split("\\.")[1];
 	}
 
 }

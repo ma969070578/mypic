@@ -31,16 +31,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.amima.app.MyApp;
 import com.amima.pic.R;
+import com.amima.ui.base.BaseActivity;
 import com.google.zxing.camera.CameraManager;
 import com.google.zxing.decoding.CaptureActivityHandler;
 import com.google.zxing.decoding.InactivityTimer;
 import com.google.zxing.view.ViewfinderView;
-import com.my.activity.BaseActivity;
 import com.my.activity.sq.bean.SqInfoBean;
 import com.my.android.http.AsyncHttpResponseHandler;
 import com.my.android.http.RequestParams;
-import com.my.app.MyApp;
 import com.my.dialog.ProgressDlg;
 import com.my.util.HttpConnection;
 import com.my.util.MD5;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package com.amima.pic;
+package com.amima.pic.ui;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -26,7 +26,11 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import com.amima.pic.R;
+import com.my.util.StringUtil;
+import com.my.util.Tools;
 import com.nostra13.example.universalimageloader.AbsListViewBaseActivity;
 import com.nostra13.example.universalimageloader.Constants.Extra;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -69,12 +73,25 @@ public class Pic_ItemImageGridActivity extends AbsListViewBaseActivity {
 		});
 	}
 
-	 private void startImagePagerActivity(int position) {
-	 Intent intent = new Intent(this, Pic_ImagePagerActivity.class);
-	 intent.putExtra(Extra.IMAGES, imageUrls);
-	 intent.putExtra(Extra.IMAGE_POSITION, position);
-	 startActivity(intent);
-	 }
+	private void startImagePagerActivity(int position) {
+		Intent intent = new Intent();
+
+		String url = imageUrls[position];
+		if (!Tools.isNull(url)) {
+			if ("gif".equals(StringUtil.parseSuffix(url))) {
+				intent.setClass(this, Pic_GifDownShowActivity.class);
+			} else {
+				intent.setClass(this, Pic_ImagePagerActivity.class);
+			}
+
+			intent.putExtra(Extra.IMAGES, imageUrls);
+			intent.putExtra(Extra.IMAGE_POSITION, position);
+			startActivity(intent);
+		} else {
+			Tools.showShortToast("无效图片", Pic_ItemImageGridActivity.this);
+		}
+
+	}
 
 	static class ViewHolder {
 		ImageView imageView;

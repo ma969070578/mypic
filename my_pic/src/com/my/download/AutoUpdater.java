@@ -39,10 +39,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amima.app.MyApp;
 import com.amima.pic.R;
 import com.my.android.http.AsyncHttpResponseHandler;
 import com.my.android.http.RequestParams;
-import com.my.app.MyApp;
 import com.my.util.HttpConnection;
 import com.my.util.Protocol;
 import com.my.util.SystemOut;

@@ -1,4 +1,4 @@
-package com.my.activity;
+package com.amima.ui.base;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -13,8 +13,8 @@ import android.os.Message;
 import android.view.Window;
 import android.widget.Toast;
 
+import com.amima.app.MyApp;
 import com.amima.pic.R;
-import com.my.app.MyApp;
 import com.my.util.Constants;
 import com.my.util.SystemOut;
 import com.my.util.Tools;

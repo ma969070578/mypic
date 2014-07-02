@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import cn.jpush.android.api.JPushInterface;
 import cn.jpush.android.api.TagAliasCallback;
 
-import com.my.app.MyApp;
+import com.amima.app.MyApp;
 import com.my.util.Constants;
 import com.my.util.SharedPreTools;
 import com.my.util.SystemOut;

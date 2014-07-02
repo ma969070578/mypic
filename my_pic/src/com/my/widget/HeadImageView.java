@@ -28,7 +28,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.my.app.MyApp;
+import com.amima.app.MyApp;
 import com.my.util.Net;
 import com.my.util.Tools;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;

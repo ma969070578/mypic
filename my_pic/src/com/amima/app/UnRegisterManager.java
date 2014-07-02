@@ -1,4 +1,4 @@
-package com.my.app;
+package com.amima.app;
 
 import java.util.Timer;
 import java.util.TimerTask;

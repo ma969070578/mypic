@@ -15,9 +15,9 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.amima.app.MyApp;
 import com.amima.pic.R;
-import com.my.activity.BaseActivity;
-import com.my.app.MyApp;
+import com.amima.ui.base.BaseActivity;
 import com.my.util.SystemOut;
 import com.my.util.Tools;
 

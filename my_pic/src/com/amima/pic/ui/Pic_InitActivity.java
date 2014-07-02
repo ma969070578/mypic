@@ -1,4 +1,4 @@
-package com.amima.pic;
+package com.amima.pic.ui;
 
 import java.io.File;
 
@@ -13,11 +13,12 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.Toast;
 
+import com.amima.app.MyApp;
+import com.amima.pic.R;
+import com.amima.ui.base.BaseActivity;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.location.LocationClientOption.LocationMode;
-import com.my.activity.BaseActivity;
-import com.my.app.MyApp;
 import com.my.util.Constants;
 import com.my.util.Files;
 import com.my.util.PhoneUtils;

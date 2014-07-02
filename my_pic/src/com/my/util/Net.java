@@ -17,7 +17,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.my.app.MyApp;
+import com.amima.app.MyApp;
 
 public class Net {
 

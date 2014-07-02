@@ -1,4 +1,4 @@
-package com.my.activity.sq.adapter;
+package com.amima.pic.ui.adapter;
 
 import java.util.ArrayList;
 

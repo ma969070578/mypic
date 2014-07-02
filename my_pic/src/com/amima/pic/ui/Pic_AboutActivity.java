@@ -1,4 +1,4 @@
-package com.amima.pic;
+package com.amima.pic.ui;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.amima.pic.R;
-import com.my.activity.BaseActivity;
+import com.amima.ui.base.BaseActivity;
 
 public class Pic_AboutActivity extends BaseActivity implements OnClickListener {
 	

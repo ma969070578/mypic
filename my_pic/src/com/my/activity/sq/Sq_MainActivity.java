@@ -27,8 +27,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amima.app.MyApp;
 import com.amima.pic.R;
-import com.my.activity.BaseActivity;
+import com.amima.ui.base.BaseActivity;
 import com.my.activity.sq.adapter.InfoAdapter;
 import com.my.activity.sq.adapter.UserAdapter;
 import com.my.activity.sq.bean.InfoBean;
@@ -37,7 +38,6 @@ import com.my.activity.sq.bean.UserBean;
 import com.my.activity.sq.popup.UserPopupWindow;
 import com.my.android.http.AsyncHttpResponseHandler;
 import com.my.android.http.RequestParams;
-import com.my.app.MyApp;
 import com.my.comm.MyScrollLayout;
 import com.my.comm.OnViewChangeListener;
 import com.my.dialog.ProgressDlg;

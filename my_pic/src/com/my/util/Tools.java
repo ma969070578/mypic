@@ -42,9 +42,9 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import com.amima.app.MyApp;
 import com.amima.pic.R;
 import com.my.activity.sq.bean.Pic_ServiceBean;
-import com.my.app.MyApp;
 
 public class Tools {
 

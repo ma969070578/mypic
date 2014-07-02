@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package com.amima.pic;
+package com.amima.pic.ui;
 
 import static com.nostra13.example.universalimageloader.Constants.IMAGES;
 import android.content.Intent;
@@ -28,6 +28,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import com.amima.pic.R;
 import com.my.util.SystemOut;
 import com.nostra13.example.universalimageloader.AbsListViewBaseActivity;
 import com.nostra13.example.universalimageloader.Constants.Extra;

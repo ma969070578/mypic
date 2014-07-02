@@ -15,12 +15,12 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.amima.app.MyApp;
 import com.amima.pic.R;
 import com.my.activity.sq.Sq_WebActivity;
 import com.my.activity.sq.bean.InfoBean;
 import com.my.android.http.AsyncHttpResponseHandler;
 import com.my.android.http.RequestParams;
-import com.my.app.MyApp;
 import com.my.util.HttpConnection;
 import com.my.util.Protocol;
 import com.my.util.SystemOut;

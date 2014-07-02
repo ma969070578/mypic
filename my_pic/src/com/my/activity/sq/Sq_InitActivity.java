@@ -11,13 +11,13 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.Toast;
 
-import com.amima.pic.Pic_MainActivity;
+import com.amima.app.MyApp;
 import com.amima.pic.R;
+import com.amima.pic.ui.Pic_MainActivity;
+import com.amima.ui.base.BaseActivity;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.location.LocationClientOption.LocationMode;
-import com.my.activity.BaseActivity;
-import com.my.app.MyApp;
 import com.my.util.Constants;
 import com.my.util.SharedPreTools;
 import com.my.util.SystemOut;

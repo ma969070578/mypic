@@ -1,4 +1,4 @@
-package com.my.activity.sq.adapter;
+package com.amima.pic.ui.adapter;
 
 import static com.nostra13.example.universalimageloader.Constants.IMAGES;
 
@@ -15,8 +15,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.amima.pic.Pic_GroupImageGridActivity;
 import com.amima.pic.R;
+import com.amima.pic.ui.Pic_GroupImageGridActivity;
 import com.my.activity.sq.bean.Pic_ServiceBean;
 import com.my.widget.HeadImageView;
 import com.nostra13.example.universalimageloader.Constants.Extra;

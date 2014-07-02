@@ -6,7 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.my.app.MyApp;
+import com.amima.app.MyApp;
 import com.my.util.SystemOut;
 import com.my.util.Tools;
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package com.amima.pic;
+package com.amima.pic.ui;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;

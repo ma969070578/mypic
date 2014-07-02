@@ -25,14 +25,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amima.app.MyApp;
 import com.amima.pic.R;
+import com.amima.ui.base.BaseActivity;
 import com.google.zxing.CaptureActivity;
-import com.my.activity.BaseActivity;
 import com.my.activity.sq.adapter.SqListAdapter;
 import com.my.activity.sq.bean.SqInfoBean;
 import com.my.android.http.AsyncHttpResponseHandler;
 import com.my.android.http.RequestParams;
-import com.my.app.MyApp;
 import com.my.dialog.ProgressDlg;
 import com.my.util.HttpConnection;
 import com.my.util.Protocol;

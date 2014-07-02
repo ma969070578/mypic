@@ -25,7 +25,7 @@ import cn.sharesdk.wechat.utils.WechatClientNotExistException;
 import cn.sharesdk.wechat.utils.WechatTimelineNotSupportedException;
 
 import com.amima.pic.R;
-import com.my.activity.BaseActivity;
+import com.amima.ui.base.BaseActivity;
 import com.my.util.Tools;
 
 public class TestShare extends BaseActivity implements OnClickListener {

@@ -27,7 +27,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.amima.pic.R;
-import com.my.activity.BaseActivity;
+import com.amima.ui.base.BaseActivity;
 import com.my.android.http.AsyncHttpResponseHandler;
 import com.my.android.http.RequestParams;
 import com.my.dialog.ProgressDlg;

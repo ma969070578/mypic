@@ -18,7 +18,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
-import com.my.app.MyApp;
+import com.amima.app.MyApp;
 
 
 public class SharedPreTools {

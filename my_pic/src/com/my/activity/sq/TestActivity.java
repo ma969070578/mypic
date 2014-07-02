@@ -24,7 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amima.pic.R;
-import com.my.activity.BaseActivity;
+import com.amima.ui.base.BaseActivity;
 import com.my.activity.sq.adapter.UserAdapter;
 import com.my.activity.sq.bean.UserBean;
 import com.my.android.http.AsyncHttpResponseHandler;
