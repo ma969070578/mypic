@@ -15,7 +15,7 @@
     android:orientation="vertical"
     android:layout_alignParentTop="true"
     android:layout_alignParentRight="true"
-     android:background="@drawable/abc_ab_bottom_solid_dark_holo"
+ 
      >
 
 
