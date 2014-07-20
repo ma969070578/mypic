@@ -19,6 +19,7 @@ public class XListViewFooter extends LinearLayout {
 	public final static int STATE_NORMAL = 0;
 	public final static int STATE_READY = 1;
 	public final static int STATE_LOADING = 2;
+	public final static int STATE_HIDEING=3;
 
 	private Context mContext;
 
@@ -46,7 +47,10 @@ public class XListViewFooter extends LinearLayout {
 			mHintView.setText(R.string.xlistview_footer_hint_ready);
 		} else if (state == STATE_LOADING) {
 			mProgressBar.setVisibility(View.VISIBLE);
-		} else {
+		} else if (state == STATE_HIDEING) {
+			mHintView.setVisibility(View.GONE);
+			mProgressBar.setVisibility(View.GONE);
+		}else {
 			mHintView.setVisibility(View.VISIBLE);
 			mHintView.setText(R.string.xlistview_footer_hint_normal);
 		}
