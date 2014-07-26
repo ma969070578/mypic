@@ -79,7 +79,7 @@ public class Pic_ItemImageGridActivity extends AbsListViewBaseActivity {
 		String url = imageUrls[position];
 		if (!Tools.isNull(url)) {
 			if ("gif".equals(StringUtil.parseSuffix(url))) {
-				intent.setClass(this, Pic_GifDownShowActivity.class);
+				intent.setClass(this, Pic_DownShowActivity.class);
 			} else {
 				intent.setClass(this, Pic_ImagePagerActivity.class);
 			}

@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DecimalFormat;
 
 import org.apache.http.util.ByteArrayBuffer;
 
@@ -283,6 +284,41 @@ public class Files {
 			}
 		}).start();
 	}
+	
+	
+	
+	
+	
+	public static final int    MB_2_BYTE             = 1024 * 1024;
+    public static final int    KB_2_BYTE             = 1024;
+    static final DecimalFormat DOUBLE_DECIMAL_FORMAT = new DecimalFormat("0.##");
+
+
+    public static CharSequence get_size(long size) {
+        if (size <= 0) {
+            return "0M";
+        }
+
+        if (size >= MB_2_BYTE) {
+            return new StringBuilder(16).append(DOUBLE_DECIMAL_FORMAT.format((double)size / MB_2_BYTE)).append("M");
+        } else if (size >= KB_2_BYTE) {
+            return new StringBuilder(16).append(DOUBLE_DECIMAL_FORMAT.format((double)size / KB_2_BYTE)).append("K");
+        } else {
+            return size + "B";
+        }
+    }
+
+    public static String get_percent(long progress, long max) {
+        int rate = 0;
+        if (progress <= 0 || max <= 0) {
+            rate = 0;
+        } else if (progress > max) {
+            rate = 100;
+        } else {
+            rate = (int)((double)progress / max * 100);
+        }
+        return new StringBuilder(16).append(rate).append("%").toString();
+    }
 	
 	
 }

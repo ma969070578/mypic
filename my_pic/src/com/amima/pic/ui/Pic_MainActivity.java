@@ -48,8 +48,7 @@ import com.my.widget.CustomButton;
 import com.slidingmenu.lib.SlidingMenu;
 import com.umeng.fb.FeedbackAgent;
 
-public class Pic_MainActivity extends BaseActivity implements
-		OnClickListener {
+public class Pic_MainActivity extends BaseActivity implements OnClickListener {
 	private View footerView;
 	View Progress_view;
 	LayoutInflater mInflater;
@@ -84,9 +83,9 @@ public class Pic_MainActivity extends BaseActivity implements
 	private final String LIST_TEXT = "text";
 	private final String LIST_IMAGEVIEW = "img";
 	private int mTag = 0;
-	
-	  private CustomButton cbFeedback;
-	    private CustomButton cbAbove;
+
+	private CustomButton cbFeedback;
+	private CustomButton cbAbove;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -107,7 +106,7 @@ public class Pic_MainActivity extends BaseActivity implements
 		listView.addFooterView(footerView);
 		footerView.setVisibility(View.GONE);
 		listView.setOnScrollListener(new MyOnScrollListener());
-		AskHistoryBeanlist=Tools.getServiceItem();
+		AskHistoryBeanlist = Tools.getServiceItem();
 		adapter = new Pic_ServiceListAdapter(this, AskHistoryBeanlist);
 		listView.setAdapter(adapter);
 
@@ -121,10 +120,10 @@ public class Pic_MainActivity extends BaseActivity implements
 
 		leftSlidingMenu();
 		lvTitle = (ListView) findViewById(R.id.behind_list_show);
-		 cbFeedback = (CustomButton) findViewById(R.id.cbFeedback);
-	        cbFeedback.setOnClickListener(this);
-	        cbAbove = (CustomButton) findViewById(R.id.cbAbove);
-	        cbAbove.setOnClickListener(this);
+		cbFeedback = (CustomButton) findViewById(R.id.cbFeedback);
+		cbFeedback.setOnClickListener(this);
+		cbAbove = (CustomButton) findViewById(R.id.cbAbove);
+		cbAbove.setOnClickListener(this);
 		initListView();
 	}
 
@@ -185,6 +184,11 @@ public class Pic_MainActivity extends BaseActivity implements
 			public View getView(int position, View convertView, ViewGroup parent) {
 				// TODO Auto-generated method stub.
 				View view = super.getView(position, convertView, parent);
+				
+//                toggle();
+//               getSlidingMenu().showMenu();// show menu
+               slidingMenu.showContent();//show content
+
 				if (position == mTag) {
 					view.setBackgroundResource(R.drawable.back_behind_list);
 					lvTitle.setTag(view);
@@ -201,7 +205,7 @@ public class Pic_MainActivity extends BaseActivity implements
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				//重新加载数据
+				// 重新加载数据
 				mTag = arg2;
 				lvAdapter.notifyDataSetChanged();
 			}
@@ -322,7 +326,6 @@ public class Pic_MainActivity extends BaseActivity implements
 				footerView.setVisibility(View.GONE);
 				adapter.notifyDataSetChanged();
 
-			 
 				break;
 
 			case GET_FAIL:
@@ -364,7 +367,7 @@ public class Pic_MainActivity extends BaseActivity implements
 				footerView.setVisibility(View.VISIBLE);
 				isfinishing = false;
 				Progress_view.setVisibility(View.VISIBLE);
-//				getAllData(app.user.getId(), currentpage, pagenum);
+				// getAllData(app.user.getId(), currentpage, pagenum);
 			}
 		}
 
@@ -382,14 +385,14 @@ public class Pic_MainActivity extends BaseActivity implements
 			finish();
 
 			break;
-			
-        case R.id.cbFeedback:
-            FeedbackAgent agent = new FeedbackAgent(this);
-            agent.startFeedbackActivity();
-            break;
-        case R.id.cbAbove:
-            IntentUtil.start_activity(this, Pic_AboutActivity.class);
-            break;
+
+		case R.id.cbFeedback:
+			FeedbackAgent agent = new FeedbackAgent(this);
+			agent.startFeedbackActivity();
+			break;
+		case R.id.cbAbove:
+			IntentUtil.start_activity(this, Pic_AboutActivity.class);
+			break;
 
 		}
 	}

@@ -83,7 +83,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.amima.pic.ui.Pic_GifDownShowActivity"
+            android:name="com.amima.pic.ui.Pic_DownShowActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
