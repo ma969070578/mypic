@@ -28,6 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amima.app.MyApp;
+import com.amima.app.widget.HeadImageView;
 import com.amima.pic.R;
 import com.amima.ui.base.BaseActivity;
 import com.my.activity.sq.adapter.InfoAdapter;
@@ -48,7 +49,6 @@ import com.my.util.Protocol;
 import com.my.util.SharedPreTools;
 import com.my.util.SystemOut;
 import com.my.util.Tools;
-import com.my.widget.HeadImageView;
 
 public class Sq_MainActivity extends BaseActivity implements
 		OnViewChangeListener, OnClickListener {

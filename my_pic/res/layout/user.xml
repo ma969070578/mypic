@@ -8,7 +8,7 @@
 		          android:layout_width="fill_parent"
 	              android:layout_height="wrap_content"
 		          >
-		          <com.my.widget.HeadImageView
+		          <com.amima.app.widget.HeadImageView
 		              android:id="@+id/userImg"
 		              android:layout_alignParentLeft="true" 
 		              android:layout_width="60dip"

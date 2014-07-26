@@ -29,11 +29,10 @@ import com.nostra13.example.universalimageloader.Constants.Extra;
 public class Pic_DownShowActivity extends BaseActivity {
 
 	private final static String TAG = "IcsTestActivity";
-	private final static String ALBUM_PATH = Environment
-			.getExternalStorageDirectory() + "/download_test/";
+ 
 	private GifImageView mImageView;
 
-	Context context;
+	 
 	private Button less_5mb_btn, less_10mb_btn, remove_btn, pause_btn;
 	private ProgressBar progress_bar;
 	private TextView percentage_view, present_view;
@@ -42,14 +41,6 @@ public class Pic_DownShowActivity extends BaseActivity {
 
 	DownloadLib fd1;
 	private String msave_file_path;
-
-	private Message message = null;
-	private boolean flag = true;
-	private int size = 1;
-	private int hasRead = 0;
-	private int len = 0;
-	private byte buffer[] = new byte[1024 * 4];
-	private int index = 0;
 	private String murl;
 
 	InputStream is = null;
@@ -63,7 +54,7 @@ public class Pic_DownShowActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pic_gif_downshow);
 
-		context = getApplicationContext();
+		 
 
 		progress_bar = (ProgressBar) this.findViewById(R.id.downloadbar);
 		present_view = (TextView) this.findViewById(R.id.present_view);

@@ -4,7 +4,7 @@
  * @author Maxwin
  * @description XListView's header
  */
-package com.my.widget;
+package com.amima.app.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

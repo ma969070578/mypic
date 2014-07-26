@@ -130,7 +130,7 @@
 
         <!-- image-loader   HomeActivity -->
         <!-- Widget -->
-        <receiver android:name="com.my.widget.UILWidgetProvider" >
+        <receiver android:name="com.amima.app.widget.UILWidgetProvider" >
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_provider" />

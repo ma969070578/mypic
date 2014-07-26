@@ -1,5 +1,5 @@
 
-package com.my.widget;
+package com.amima.app.widget;
 
 import java.io.BufferedInputStream;
 import java.io.File;

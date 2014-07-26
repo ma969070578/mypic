@@ -1,4 +1,4 @@
-package com.my.widget;
+package com.amima.app.widget;
 
 import android.content.Context;
 import android.graphics.Color;

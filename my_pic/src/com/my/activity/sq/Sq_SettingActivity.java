@@ -26,6 +26,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.amima.app.widget.HeadImageView;
 import com.amima.pic.R;
 import com.amima.ui.base.BaseActivity;
 import com.my.android.http.AsyncHttpResponseHandler;
@@ -38,7 +39,6 @@ import com.my.util.HttpConnection;
 import com.my.util.Protocol;
 import com.my.util.SystemOut;
 import com.my.util.Tools;
-import com.my.widget.HeadImageView;
 
 public class Sq_SettingActivity extends BaseActivity implements OnClickListener {
 

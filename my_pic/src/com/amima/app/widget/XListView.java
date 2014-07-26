@@ -6,7 +6,7 @@
  * @description An ListView support (a) Pull down to refresh, (b) Pull up to load more.
  * 		Implement IXListViewListener, and see stopRefresh() / stopLoadMore().
  */
-package com.my.widget;
+package com.amima.app.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

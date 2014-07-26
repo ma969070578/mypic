@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.amima.app.MyApp;
+import com.amima.app.widget.HeadImageView;
 import com.amima.pic.R;
 import com.my.activity.sq.Sq_WebActivity;
 import com.my.activity.sq.bean.InfoBean;
@@ -25,7 +26,6 @@ import com.my.util.HttpConnection;
 import com.my.util.Protocol;
 import com.my.util.SystemOut;
 import com.my.util.Tools;
-import com.my.widget.HeadImageView;
 
 public class InfoAdapter extends BaseAdapter {
 	private Context context;

@@ -11,10 +11,10 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.amima.app.widget.HeadImageView;
 import com.amima.pic.R;
 import com.my.activity.sq.bean.AskHistoryBean;
 import com.my.util.Tools;
-import com.my.widget.HeadImageView;
 
 public class AskHistoryAdapter extends BaseAdapter {
 	private Context context;

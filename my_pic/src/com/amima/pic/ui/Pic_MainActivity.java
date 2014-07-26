@@ -15,12 +15,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
@@ -32,6 +29,9 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amima.app.widget.CustomButton;
+import com.amima.app.widget.XListView;
+import com.amima.app.widget.XListView.IXListViewListener;
 import com.amima.pic.R;
 import com.amima.pic.ui.adapter.Pic_ServiceListAdapter;
 import com.amima.ui.base.BaseActivity;
@@ -44,19 +44,18 @@ import com.my.util.IntentUtil;
 import com.my.util.Protocol;
 import com.my.util.SystemOut;
 import com.my.util.Tools;
-import com.my.widget.CustomButton;
 import com.slidingmenu.lib.SlidingMenu;
 import com.umeng.fb.FeedbackAgent;
 
-public class Pic_MainActivity extends BaseActivity implements OnClickListener {
-	private View footerView;
-	View Progress_view;
-	LayoutInflater mInflater;
-	private ListView listView;
-	private boolean isfinishing = true;// 加载数据完成标示
+public class Pic_MainActivity extends BaseActivity implements OnClickListener, IXListViewListener {
+//	private View footerView;
+//	View Progress_view;
+//	LayoutInflater mInflater;
+	private XListView listview;
+//	private boolean isfinishing = true;// 加载数据完成标示
 	private int currentpage = 1;
 	private int pagenum = 10;
-	private TextView updataButton;
+//	private TextView updataButton;
 	private Pic_ServiceListAdapter adapter;
 
 	private ArrayList<Pic_ServiceBean> AskHistoryBeanlist = new ArrayList<Pic_ServiceBean>();
@@ -98,17 +97,23 @@ public class Pic_MainActivity extends BaseActivity implements OnClickListener {
 				R.drawable.user_image_back));
 		image_back.setOnClickListener(this);
 
-		mInflater = LayoutInflater.from(this);
-		footerView = mInflater.inflate(R.layout.my_list_footer, null);
-
-		Progress_view = footerView.findViewById(R.id.Progress_view);
-		listView = (ListView) findViewById(R.id.list1);
-		listView.addFooterView(footerView);
-		footerView.setVisibility(View.GONE);
-		listView.setOnScrollListener(new MyOnScrollListener());
+//		mInflater = LayoutInflater.from(this);
+//		footerView = mInflater.inflate(R.layout.my_list_footer, null);
+//
+//		Progress_view = footerView.findViewById(R.id.Progress_view);
+//		listView = (ListView) findViewById(R.id.list1);
+		
+		listview = (XListView) findViewById(R.id.list_view);
+		 
+		listview.setPullLoadEnable(true);
+		listview.setPullRefreshEnable(false);
+//		
+//		listView.addFooterView(footerView);
+//		footerView.setVisibility(View.GONE);
+//		listView.setOnScrollListener(new MyOnScrollListener());
 		AskHistoryBeanlist = Tools.getServiceItem();
 		adapter = new Pic_ServiceListAdapter(this, AskHistoryBeanlist);
-		listView.setAdapter(adapter);
+		listview.setAdapter(adapter);
 
 		tv_message = (TextView) findViewById(R.id.asktime);
 		tv_nodata = (TextView) findViewById(R.id.tv_nodata);
@@ -263,7 +268,6 @@ public class Pic_MainActivity extends BaseActivity implements OnClickListener {
 
 		@Override
 		public void onFinish() {
-			isfinishing = true;
 			super.onFinish();
 		}
 
@@ -278,7 +282,6 @@ public class Pic_MainActivity extends BaseActivity implements OnClickListener {
 			}
 			// tempAskHistoryBeanlist.addAll(AskHistoryBeanFunctions
 			// .getAskHistoryBean(content));
-			isfinishing = true;
 			if (tempAskHistoryBeanlist != null
 					&& tempAskHistoryBeanlist.size() > 0) {
 				currentpage++;
@@ -315,6 +318,8 @@ public class Pic_MainActivity extends BaseActivity implements OnClickListener {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case GET_SUCCESS:
+				
+				onLoad();
 				List<Pic_ServiceBean> all_list = (List<Pic_ServiceBean>) msg.obj;
 				if (all_list != null && all_list.size() > 0) {
 
@@ -323,20 +328,21 @@ public class Pic_MainActivity extends BaseActivity implements OnClickListener {
 					Tools.showShortToast("暂无最新数据", Pic_MainActivity.this);
 				}
 
-				footerView.setVisibility(View.GONE);
+//				footerView.setVisibility(View.GONE);
 				adapter.notifyDataSetChanged();
 
 				break;
 
 			case GET_FAIL:
 				// AskHistoryBeanlist.clear();
-				footerView.setVisibility(View.GONE);
+//				footerView.setVisibility(View.GONE);
+				onLoad();
 				adapter.notifyDataSetChanged();
 				if (currentpage <= 1 && AskHistoryBeanlist.size() <= 0) {
 					tv_nodata.setVisibility(View.VISIBLE);
 					tv_nodata.setText("暂无咨询记录");
 				} else {
-					Toast.makeText(getApplicationContext(), "暂无更多数据",
+					Toast.makeText(getApplicationContext(), "暂无数据",
 							Toast.LENGTH_SHORT).show();
 				}
 
@@ -346,32 +352,32 @@ public class Pic_MainActivity extends BaseActivity implements OnClickListener {
 		}
 	};
 
-	/**
-	 * 
-	 * ListView 滚动事件
-	 * 
-	 */
-	private class MyOnScrollListener implements OnScrollListener {
-
-		@Override
-		public void onScroll(AbsListView view, int firstVisibleItem,
-				int visibleItemCount, int totalItemCount) {
-		}
-
-		@Override
-		public void onScrollStateChanged(AbsListView view, int scrollState) {
-			if (view.getLastVisiblePosition() >= view.getCount() - 1
-					&& scrollState == OnScrollListener.SCROLL_STATE_IDLE
-					&& isfinishing) {
-
-				footerView.setVisibility(View.VISIBLE);
-				isfinishing = false;
-				Progress_view.setVisibility(View.VISIBLE);
-				// getAllData(app.user.getId(), currentpage, pagenum);
-			}
-		}
-
-	}
+//	/**
+//	 * 
+//	 * ListView 滚动事件
+//	 * 
+//	 */
+//	private class MyOnScrollListener implements OnScrollListener {
+//
+//		@Override
+//		public void onScroll(AbsListView view, int firstVisibleItem,
+//				int visibleItemCount, int totalItemCount) {
+//		}
+//
+//		@Override
+//		public void onScrollStateChanged(AbsListView view, int scrollState) {
+//			if (view.getLastVisiblePosition() >= view.getCount() - 1
+//					&& scrollState == OnScrollListener.SCROLL_STATE_IDLE
+//					&& isfinishing) {
+//
+//				footerView.setVisibility(View.VISIBLE);
+//				isfinishing = false;
+//				Progress_view.setVisibility(View.VISIBLE);
+//				// getAllData(app.user.getId(), currentpage, pagenum);
+//			}
+//		}
+//
+//	}
 
 	/**
 	 * 评价的点击事件
@@ -397,11 +403,34 @@ public class Pic_MainActivity extends BaseActivity implements OnClickListener {
 		}
 	}
 
+	
+
+	@Override
+	public void onRefresh() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onLoadMore() {
+		// TODO Auto-generated method stub
+		getAllData(app.user.getId(), currentpage, pagenum);
+	}
+	
+	
+	public void onLoad() {
+		listview.stopRefresh();
+		listview.stopLoadMore();
+		listview.setRefreshTime("刚刚");
+	}
+	
+	
+	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		// TODO Auto-generated method stub
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			Pic_MainActivity.this.finish();
+			Tools.appExit(Pic_MainActivity.this);
 
 			return true;
 		}

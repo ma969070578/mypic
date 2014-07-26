@@ -11,10 +11,10 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.amima.app.widget.HeadImageView;
 import com.amima.pic.R;
 import com.my.activity.sq.bean.RecordBean;
 import com.my.util.Tools;
-import com.my.widget.HeadImageView;
 
 public class RecordAdapter extends BaseAdapter {
 	private Context context;

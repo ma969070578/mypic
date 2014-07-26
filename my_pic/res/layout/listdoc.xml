@@ -15,7 +15,7 @@
             android:padding="0dip"
             android:layout_width="60dip"
              >
-            <com.my.widget.HeadImageView
+            <com.amima.app.widget.HeadImageView
                 android:id="@+id/avatar"
                 android:layout_width="60dip"
                 android:layout_height="60dip"
@@ -35,7 +35,7 @@
                 android:gravity="center" />
         </RelativeLayout>
 
-        <com.my.widget.HeadImageView
+        <com.amima.app.widget.HeadImageView
             android:id="@+id/shipin"
             android:layout_width="90dip"
             android:layout_height="36dip"

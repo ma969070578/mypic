@@ -4,7 +4,7 @@
  * @author Maxwin
  * @description XListView's footer
  */
-package com.my.widget;
+package com.amima.app.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

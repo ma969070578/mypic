@@ -15,10 +15,10 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.amima.app.widget.HeadImageView;
 import com.amima.pic.R;
 import com.amima.pic.ui.Pic_GroupImageGridActivity;
 import com.my.activity.sq.bean.Pic_ServiceBean;
-import com.my.widget.HeadImageView;
 import com.nostra13.example.universalimageloader.Constants.Extra;
 
 public class Pic_ServiceListAdapter extends BaseAdapter {

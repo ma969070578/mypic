@@ -11,9 +11,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.amima.app.widget.HeadImageView;
 import com.amima.pic.R;
 import com.my.activity.sq.bean.UserBean;
-import com.my.widget.HeadImageView;
 
 public class UserAdapter extends BaseAdapter {
 	private Context context;

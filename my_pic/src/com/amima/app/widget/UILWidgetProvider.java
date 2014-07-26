@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package com.my.widget;
+package com.amima.app.widget;
 
 import static com.nostra13.example.universalimageloader.Constants.IMAGES;
 import android.appwidget.AppWidgetManager;
