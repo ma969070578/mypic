@@ -14,8 +14,10 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -29,10 +31,9 @@ import com.nostra13.example.universalimageloader.Constants.Extra;
 public class Pic_DownShowActivity extends BaseActivity {
 
 	private final static String TAG = "IcsTestActivity";
- 
+
 	private GifImageView mImageView;
 
-	 
 	private Button less_5mb_btn, less_10mb_btn, remove_btn, pause_btn;
 	private ProgressBar progress_bar;
 	private TextView percentage_view, present_view;
@@ -47,14 +48,14 @@ public class Pic_DownShowActivity extends BaseActivity {
 	private final int FILE = 11;
 	private final int ASSETS = 12;
 	private final int URL = 13;
-	WebView view;
+	private LinearLayout netlayout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pic_gif_downshow);
 
-		 
+		netlayout = (LinearLayout) this.findViewById(R.id.netlayout);
 
 		progress_bar = (ProgressBar) this.findViewById(R.id.downloadbar);
 		present_view = (TextView) this.findViewById(R.id.present_view);
@@ -64,6 +65,8 @@ public class Pic_DownShowActivity extends BaseActivity {
 		progress_bar.setMax(0);
 		progress_bar.setProgress(0);
 
+		netlayout.setVisibility(View.GONE);
+
 		Bundle bundle = getIntent().getExtras();
 		assert bundle != null;
 		String[] imageUrls = bundle.getStringArray(Extra.IMAGES);
@@ -71,6 +74,8 @@ public class Pic_DownShowActivity extends BaseActivity {
 		murl = imageUrls[pagerPosition];
 		if (murl.contains("http")) {
 			downloadFile(murl);
+
+			netlayout.setVisibility(View.VISIBLE);
 		} else if (murl.contains("file")) {
 			File mfile = new File(murl);
 
@@ -80,6 +85,7 @@ public class Pic_DownShowActivity extends BaseActivity {
 
 		} else if (murl.contains("assets")) {
 
+			murl = murl.replace("assets://", "");
 			Message mssage = new Message();
 			mssage.what = ASSETS;
 			connectHanlder.sendMessage(mssage);
@@ -159,7 +165,7 @@ public class Pic_DownShowActivity extends BaseActivity {
 			case ASSETS:
 				GifDrawable gifFromAssets;
 				try {
-					gifFromAssets = new GifDrawable(getAssets(), "4.gif");
+					gifFromAssets = new GifDrawable(getAssets(), murl);
 					mImageView.setBackgroundDrawable(gifFromAssets);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block

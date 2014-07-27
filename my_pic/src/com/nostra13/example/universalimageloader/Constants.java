@@ -184,6 +184,34 @@ public final class Constants {
 			"", // Empty link
 			"http://wrong.site.com/corruptedLink", // Wrong link
 	};
+	
+	
+	public static final String[] IMAGES2 = new String[] {
+		"assets://11010414278896169835b3c157.gif",
+		"assets://110104144217510c86f7acf1c8.gif",
+		"assets://1101041518f9b165c9593f9c58.gif",
+		"assets://1101041530ea63667a9fbf7859.gif",
+		"assets://1101041532cdac8c223257c8b2.gif",
+		"assets://1101041533a2adf8f3d2b0a8ec.gif",
+		"assets://1101041533f4a7e95c5e56cb0e.gif",
+		"assets://1101041539b806d430e049ac5b.gif",
+		"assets://1101041548b1fc005632c187fa.gif",
+		"assets://1101041602f6f3fc412c578495.gif",
+		"assets://11010416115636f1d91916b74a.gif",
+		"assets://110104163240914d4cf7d49b67.gif",
+		"assets://1101041655f2bb2e3a157201cd.gif",
+		"assets://1101041705832d676f5c246207.gif",
+		"assets://11010417060418ebcc92ab0a3d.gif",
+		"assets://11010417197441294610886df6.gif",
+		"assets://1101050912008f090bce37e9c0.gif",
+		"assets://1101050912516b3404da1f08e1.gif",
+		"assets://1101050937721e9a4a7bf74522.gif",
+		"assets://1101050945825ee4b2b84a3fad.gif",
+		"assets://1101050947893d30d5a794848f.gif",
+		"assets://11010510104281bd2d3909356c.gif",
+		"assets://11010510294623b09804ea2ec1.gif",
+
+	};
 
 	private Constants() {
 	}

@@ -388,7 +388,7 @@ public class Pic_MainActivity extends BaseActivity implements OnClickListener, I
 
 		case R.id.image_back:
 
-			finish();
+//			finish();
 
 			break;
 
