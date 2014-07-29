@@ -21,17 +21,6 @@ jpush
 mytest
 
 
-gif
 
-http://blog.csdn.net/iamlazybone/article/details/5972234
-http://my.oschina.net/u/1175746/blog/288258
-http://pan.baidu.com/s/1gdd27v1
-
-
-139
-社区图片外链（
-http://link.shequ.10086.cn/iSpaceWeb/piclink/index.jsp
-）
-界面简洁，用起来感觉很好，可支持淘宝、拍拍等所有的网店，也支持社区、博客、论坛等。
  
 
