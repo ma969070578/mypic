@@ -23,7 +23,6 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -35,6 +34,7 @@ import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
+import com.polites.android.GestureImageView;
 
 /**
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
@@ -106,7 +106,7 @@ public class Pic_ImagePagerActivity extends BaseActivity {
 		public Object instantiateItem(ViewGroup view, int position) {
 			View imageLayout = inflater.inflate(R.layout.item_pager_image, view, false);
 			assert imageLayout != null;
-			ImageView imageView = (ImageView) imageLayout.findViewById(R.id.image);
+			GestureImageView imageView = (GestureImageView) imageLayout.findViewById(R.id.image);
 			final ProgressBar spinner = (ProgressBar) imageLayout.findViewById(R.id.loading);
 
 			imageLoader.displayImage(images[position], imageView, options, new SimpleImageLoadingListener() {
