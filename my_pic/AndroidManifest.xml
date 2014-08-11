@@ -245,6 +245,10 @@
             android:name="JPUSH_APPKEY"
             android:value="7507ad89e15f5996e1357e3e" />
         <!-- </>值来自开发者平台取得的AppKey -->
+        
+        
+         <!-- Required -->
+   
 
 
         <!-- sharesdk -->
@@ -319,6 +323,20 @@
             android:exported="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     </application>
+    
+    
+    <!-- jpush   -->
+        <permission
+        android:name="com.amima.pic.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+        
+     <uses-permission android:name="com.amima.pic.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+ 
+     
+      <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>  
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" /> <!--since 1.6.0 -->
+        <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
     <uses-permission android:name="android.permission.CAMERA" >
     </uses-permission>
