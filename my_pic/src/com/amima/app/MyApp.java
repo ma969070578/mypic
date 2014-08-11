@@ -10,7 +10,6 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.StrictMode;
 import android.widget.TextView;
-
 import cn.jpush.android.api.JPushInterface;
 
 import com.baidu.location.BDLocation;
@@ -23,10 +22,10 @@ import com.my.util.ImageCache;
 import com.my.util.Tools;
 import com.nostra13.example.universalimageloader.Constants.Config;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
-import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.umeng.analytics.MobclickAgent;
 
 public class MyApp extends Application {
 
@@ -88,6 +87,12 @@ public class MyApp extends Application {
 		if(Tools.isDebug)
 	    JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
         JPushInterface.init(this);     		// 初始化 JPush
+        
+        
+        /**
+         * umeng在线参数
+         */
+        MobclickAgent.updateOnlineConfig( this );
         
 		super.onCreate();
 

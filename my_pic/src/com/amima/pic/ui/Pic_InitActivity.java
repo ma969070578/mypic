@@ -25,6 +25,7 @@ import com.my.util.PhoneUtils;
 import com.my.util.SharedPreTools;
 import com.my.util.SystemOut;
 import com.my.util.Tools;
+import com.umeng.analytics.MobclickAgent;
 
 public class Pic_InitActivity extends BaseActivity {
 
@@ -69,7 +70,28 @@ public class Pic_InitActivity extends BaseActivity {
 
 		mLocClient = ((MyApp) getApplication()).mLocationClient;
 
-		getLocationParams(1);
+		int lbstime = 5000;
+		String mlbstime = MobclickAgent.getConfigParams(
+				app.getApplicationContext(), "lbstime");
+		if (!Tools.isNull(mlbstime)) {
+			lbstime = Integer.parseInt(mlbstime);
+		}
+
+		int lbstype = 1;
+		String mlbstype = MobclickAgent.getConfigParams(
+				app.getApplicationContext(), "lbstype");
+		if (!Tools.isNull(mlbstype)) {
+			lbstype = Integer.parseInt(mlbstype);
+		}
+
+		int lbsneed = 1;
+		String mlbsneed = MobclickAgent.getConfigParams(
+				app.getApplicationContext(), "lbsneed");
+		if (!Tools.isNull(mlbsneed)) {
+			lbsneed = Integer.parseInt(mlbsneed);
+		}
+
+		getLocationParams(lbstype, lbstime, lbsneed);
 		setLocationOption();
 
 		// 开始定位
@@ -85,13 +107,13 @@ public class Pic_InitActivity extends BaseActivity {
 			mLocClient.requestLocation();
 		}
 
-		final String FILE_NAME1 = "1.gif";
-		final String FILE_NAME2 = "2.gif";
-		final String FILE_NAME3 = "3.gif";
-
-		Files.copyTestImageToSdCard(Pic_InitActivity.this, FILE_NAME1);
-		Files.copyTestImageToSdCard(Pic_InitActivity.this, FILE_NAME2);
-		Files.copyTestImageToSdCard(Pic_InitActivity.this, FILE_NAME3);
+		// final String FILE_NAME1 = "1.gif";
+		// final String FILE_NAME2 = "2.gif";
+		// final String FILE_NAME3 = "3.gif";
+		//
+		// Files.copyTestImageToSdCard(Pic_InitActivity.this, FILE_NAME1);
+		// Files.copyTestImageToSdCard(Pic_InitActivity.this, FILE_NAME2);
+		// Files.copyTestImageToSdCard(Pic_InitActivity.this, FILE_NAME3);
 
 		// redirectTo();
 		// if (true)
@@ -193,7 +215,7 @@ public class Pic_InitActivity extends BaseActivity {
 	}
 
 	// 获取定位参数数据
-	private void getLocationParams(int locationMode) {
+	private void getLocationParams(int locationMode, int lbstime, int lbsneed) {
 		// 定位精度 2高精度 1低功耗 0 设备定位
 		if (locationMode == 2) {
 			mLocationMode = LocationMode.Hight_Accuracy;
@@ -203,9 +225,15 @@ public class Pic_InitActivity extends BaseActivity {
 			mLocationMode = LocationMode.Device_Sensors;
 		}
 
-		// 定位模式及间隔时间
-		mLocationSequency = true;
-		mScanSpan = 5000;
+		// 0 单次 1 多次
+		if (lbsneed == 1) {
+			// 定位模式及间隔时间
+			mLocationSequency = true;
+		} else {
+			mLocationSequency = false;
+		}
+
+		mScanSpan = lbstime;
 		// 地址信息
 		mIsNeedAddress = true;
 
