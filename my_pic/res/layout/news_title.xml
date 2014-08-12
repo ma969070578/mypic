@@ -26,7 +26,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:background="@null"
-            android:drawableLeft="@drawable/new_back"
+            android:drawableLeft="@drawable/icon_back"
             android:drawablePadding="10dp"
             android:text="@string/news_head_back"
             android:textColor="@color/black"

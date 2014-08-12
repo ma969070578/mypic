@@ -20,6 +20,9 @@ jpush
 1241035319
 mytest
 
+应用标识(AppKey)
+7507ad89e15f5996e1357e3e
+
 
 
  
